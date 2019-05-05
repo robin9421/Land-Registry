@@ -2,11 +2,11 @@
   "engines": {
     "composer": "^0.20.8"
   },
-  "name": "first-network",
+  "name": "land-registry1",
   "version": "0.0.1",
-  "description": "for learning purpose",
+  "description": "for practice",
   "scripts": {
-    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/first-network.bna",
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/land-registry1.bna",
     "pretest": "npm run lint",
     "lint": "eslint .",
     "test": "nyc mocha -t 0 test/*.js && cucumber-js"

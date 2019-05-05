@@ -16,27 +16,24 @@
  * Write your model definitions here
  */
 
-namespace org.example.biznet
+namespace org.prrobin.landregistry
 
-participant SampleParticipant identified by participantId {
-  o String participantId
+participant Usercredential identified by userId {
+  o String userId
   o String firstName
   o String lastName
+  o String email
+  o String password
 }
 
-asset SampleAsset identified by assetId {
-  o String assetId
-  --> SampleParticipant owner
-  o String value
+
+asset Land identified by LId {
+  --> Usercredential owner
+  o String LId
 }
 
 transaction SampleTransaction {
-  --> SampleAsset asset
+  --> Land land
   o String newValue
 }
 
-event SampleEvent {
-  --> SampleAsset asset
-  o String oldValue
-  o String newValue
-}

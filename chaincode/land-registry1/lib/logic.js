@@ -19,7 +19,7 @@
 
 /**
  * Sample transaction
- * @param {org.example.biznet.SampleTransaction} sampleTransaction
+ * @param {org.prrobin.landregistry.SampleTransaction} sampleTransaction
  * @transaction
  */
 async function sampleTransaction(tx) {
@@ -30,12 +30,12 @@ async function sampleTransaction(tx) {
     tx.asset.value = tx.newValue;
 
     // Get the asset registry for the asset.
-    const assetRegistry = await getAssetRegistry('org.example.biznet.SampleAsset');
+    const assetRegistry = await getAssetRegistry('org.prrobin.landregistry.SampleAsset');
     // Update the asset in the asset registry.
     await assetRegistry.update(tx.asset);
 
     // Emit an event for the modified asset.
-    let event = getFactory().newEvent('org.example.biznet', 'SampleEvent');
+    let event = getFactory().newEvent('org.prrobin.landregistry', 'SampleEvent');
     event.asset = tx.asset;
     event.oldValue = oldValue;
     event.newValue = tx.newValue;
