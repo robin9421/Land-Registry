@@ -1,0 +1,3 @@
+composer archive create -t dir -n .
+composer network install -a land-registry-new@0.0.3.bna -c PeerAdmin@hlfv1
+composer network upgrade -c PeerAdmin@hlfv1 -n land-registry-new -V 0.0.3
